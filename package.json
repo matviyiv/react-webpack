@@ -1,0 +1,56 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "react app with hot reload",
+  "main": "client/app.js",
+  "private": true,
+  "scripts": {
+    "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
+    "hot-dev-server": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
+    "build": "webpack --config webpack-production.config.js --progress --profile --colors"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "redux",
+    "hot"
+  ],
+  "author": "Nazar Matviyiv",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.2.0",
+    "babel-core": "^5.0.12",
+    "babel-eslint": "^4.1.5",
+    "babel-loader": "^5.0.0",
+    "basscss-sass": "^1.0.2",
+    "css-loader": "^0.14.0",
+    "eslint": "^0.23.0",
+    "eslint-loader": "^0.14.0",
+    "eslint-plugin-react": "~2.5.0",
+    "extract-text-webpack-plugin": "^0.8.0",
+    "file-loader": "^0.8.1",
+    "html-loader": "^0.3.0",
+    "less": "^2.1.2",
+    "less-loader": "^2.0.0",
+    "lodash": "^3.9.3",
+    "node-sass": "3.3.3",
+    "null-loader": "^0.1.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-hot-loader": "^1.0.0",
+    "react-lazy-load": "^1.0.4",
+    "react-proxy-loader": "^0.3.1",
+    "react-redux": "^4.0.0",
+    "react-router": "^0.13.2",
+    "redux": "^3.0.4",
+    "sass-loader": "0.5.0",
+    "style-loader": "^0.12.0",
+    "superagent": "^1.1.0",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.8.5",
+    "webpack-dev-server": "^1.4.7"
+  },
+  "devDependencies": {
+    "redux-devtools": "^2.1.5"
+  }
+}
