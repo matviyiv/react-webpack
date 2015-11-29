@@ -5,7 +5,7 @@
   "main": "client/app.js",
   "private": true,
   "scripts": {
-    "test": "karma start karma.config.js",
+    "test": "karma start karma.config.js --auto-watch",
     "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
     "hot-dev-server": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
     "build": "webpack --config webpack-production.config.js --progress --profile --colors"
@@ -63,6 +63,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
+    "react-addons-test-utils": "^0.14.3",
     "redux-devtools": "^2.1.5"
   }
 }
