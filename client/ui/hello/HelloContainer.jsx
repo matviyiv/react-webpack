@@ -28,7 +28,7 @@ export default class HelloContainer extends React.Component {
         <h1>Hello world !</h1>
         <h2>{example} - value from store</h2>
         <h3>{text} - extra text from props</h3>
-        <button onClick={this.handleExample}>click</button>
+        <button className="button" onClick={this.handleExample}>click</button>
     </div>);
   }
 
