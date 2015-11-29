@@ -5,9 +5,10 @@
   "main": "client/app.js",
   "private": true,
   "scripts": {
-    "test": "karma start karma.config.js --auto-watch",
+    "test": "karma start karma.config.js",
+    "test-watch": "karma start karma.config.js --no-single-run --auto-watch",
     "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
-    "hot-dev-server": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
+    "hot": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
     "build": "webpack --config webpack-production.config.js --progress --profile --colors"
   },
   "keywords": [
