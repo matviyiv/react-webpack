@@ -26,10 +26,12 @@
     "babel-loader": "^5.0.0",
     "basscss-sass": "^1.0.2",
     "css-loader": "^0.14.0",
+    "es6-promise": "^3.0.2",
     "eslint": "^0.23.0",
     "eslint-loader": "^0.14.0",
     "eslint-plugin-react": "~2.5.0",
     "extract-text-webpack-plugin": "^0.8.0",
+    "fetch-polyfill": "^0.8.1",
     "file-loader": "^0.8.1",
     "html-loader": "^0.3.0",
     "less": "^2.1.2",
@@ -53,6 +55,7 @@
     "webpack-dev-server": "^1.4.7"
   },
   "devDependencies": {
+    "bluebird": "^3.0.5",
     "expect": "^1.13.0",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
@@ -65,6 +68,13 @@
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
     "react-addons-test-utils": "^0.14.3",
-    "redux-devtools": "^2.1.5"
+    "redux-devtools": "^2.1.5",
+    "sinon": "git+https://github.com/sinonjs/sinon.git",
+    "ghooks": "^0.3.2"
+  },
+  "config": {
+    "ghooks": {
+      "pre-push": "npm run test"
+    }
   }
 }
