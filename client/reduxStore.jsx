@@ -1,23 +1,12 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { reducerFirst, reducerSecond } from 'flux/reducers';
 
-let reducer = combineReducers({ reducerFirst, reducerSecond });
-let store = createStore(reducer);
+const reducer = combineReducers({ reducerFirst, reducerSecond});
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware // lets us dispatch() functions
+)(createStore);
+
+const store = createStoreWithMiddleware(reducer);
 
 module.exports = store;
-
-function reducerFirst(state = {example: 1}, action) {
-  const actions = {
-    INCREMENT: (st) => {
-      st.example += 1;
-      return st;
-    },
-    default: (st) => { return st; }
-  };
-  const modifier = actions[action.type] || actions.default;
-
-  return modifier(state);
-}
-
-function reducerSecond(state = {}) {
-  return state;
-}
