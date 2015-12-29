@@ -2,7 +2,7 @@ import fetch_polyfill from 'fetch-polyfill';// eslint-disable-line
 import promise_polyfill from 'es6-promise';// eslint-disable-line
 import _ from 'lodash';
 
-module.exports = {
+export default {
   get: get,
   post: post
 };

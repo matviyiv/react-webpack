@@ -9,4 +9,4 @@ const createStoreWithMiddleware = applyMiddleware(
 
 const store = createStoreWithMiddleware(reducer);
 
-module.exports = store;
+export default store;

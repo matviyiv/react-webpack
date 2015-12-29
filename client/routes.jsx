@@ -10,10 +10,10 @@ if (!Object.assign) {
   Object.assign = React.__spread; // eslint-disable-line no-underscore-dangle
 }
 
-module.exports = function () {
+export default function () {
   return (
     <Route>
       <Route name="root" handler={HelloContainer} path="/*" />
     </Route>
   );
-};
+}
