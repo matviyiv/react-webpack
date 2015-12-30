@@ -1,9 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Router, Route } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import 'css/normalize.css';
 import 'css/global.scss';
 
 import HelloContainer from 'ui/hello/HelloContainer';
+
+let history = createBrowserHistory();
 
 // polyfill
 if (!Object.assign) {
@@ -12,8 +15,8 @@ if (!Object.assign) {
 
 export default function () {
   return (
-    <Route>
-      <Route name="root" handler={HelloContainer} path="/*" />
-    </Route>
+    <Router history={history}>
+      <Route name="root" component={HelloContainer} path="*" />
+    </Router>
   );
 }
