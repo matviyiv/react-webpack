@@ -22,14 +22,14 @@ Client side unit test use karma.
 4. open client/index.html in browser
 
 ## Avaliable Commands
-Development - hot reload for js and css files:
+Development - hot reload for js and css files + express server:
 ```
-npm run hot
+npm run start-dev
 ```
 
-Production - minified and uglified files:
+Production - minified and uglified files + express server:
 ```
-npm run build
+npm start
 ```
 
 Run tests:

@@ -44,7 +44,7 @@ export default class HelloContainer extends React.Component {
     }
 
     return (<div className="hello__container">
-        <h1>Hello world !</h1>
+        <h1>Hello world!</h1>
         <h2>{example} - value from store</h2>
         <h3>{text} - extra text from props</h3>
         <button className="button" onClick={this.handleExample}>click</button>

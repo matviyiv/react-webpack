@@ -10,7 +10,9 @@
     "hot": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
     "build": "webpack --config webpack-production.config.js --progress --profile --colors",
     "dev-server": "nodemon ./server/index.js",
-    "start": "NODE_ENV=prod node ./server/index.js"
+    "start-dev": "npm run hot & npm run dev-server && fg",
+    "start-prod": "NODE_ENV=prod node ./server/index.js",
+    "start": "npm run build && npm run start-prod"
   },
   "keywords": [
     "webpack",
