@@ -83,8 +83,10 @@ Reducers have pure functions to handle state change. If reducer for given action
 export function reducerExample(state = {example: 1}, action) {
   const actions = {
     ACTION_NAME: (st) => {
-      st.example += 1;
-      return st;
+      let newState = {
+        example: st.example + 1
+      };
+      return { ...st, ...newState };
     },
     default: (st) => { return st; }
   };

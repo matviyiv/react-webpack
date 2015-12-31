@@ -1,17 +1,24 @@
 export function reducerFirst(state = {example: 1}, action) {
   const actions = {
     INCREMENT: (st) => {
-      st.example += 1;
-      return st;
+      let newState = {
+        example: st.example + 1
+      };
+      return { ...st, ...newState };
     },
     LOADING: (st) => {
-      st.loadingJSON = true;
-      return st;
+      let newState = {
+        loadingJSON: true
+      };
+      return { ...st, ...newState };
     },
     LOADING_FINISHED: (st, data) => {
-      st.loadingJSON = false;
-      st.loadedData = data;
-      return st;
+      let newState = {
+        loadingJSON: false,
+        loadedData: data
+      };
+
+      return { ...st, ...newState };
     },
     default: (st) => { return st; }
   };
