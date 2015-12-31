@@ -11,7 +11,7 @@ describe('actions', function () {
     server.autoRespond = true;
     window.fetch.Promise = bluebird;
 
-    server.respondWith('GET', '/react-webpack/client/data/dummy.json?id=1',
+    server.respondWith('GET', '/_assets/dummy.json?id=1',
       [200, { 'Content-Type': 'application/json' },
        JSON.stringify({'data': true}) ]);
   });
