@@ -7,9 +7,10 @@
   "scripts": {
     "test": "karma start karma.config.js",
     "test-watch": "karma start karma.config.js --no-single-run --auto-watch",
-    "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
     "hot": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
-    "build": "webpack --config webpack-production.config.js --progress --profile --colors"
+    "build": "webpack --config webpack-production.config.js --progress --profile --colors",
+    "dev-server": "nodemon ./server/index.js",
+    "start": "NODE_ENV=prod node ./server/index.js"
   },
   "keywords": [
     "webpack",
@@ -25,11 +26,14 @@
     "babel-eslint": "^4.1.5",
     "babel-loader": "^5.0.0",
     "basscss-sass": "^1.0.2",
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.0",
     "css-loader": "^0.14.0",
     "es6-promise": "^3.0.2",
     "eslint": "^0.23.0",
     "eslint-loader": "^0.14.0",
     "eslint-plugin-react": "~2.5.0",
+    "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.0",
     "fetch-polyfill": "^0.8.1",
     "file-loader": "^0.8.1",
@@ -59,6 +63,7 @@
   "devDependencies": {
     "bluebird": "^3.0.5",
     "expect": "^1.13.0",
+    "ghooks": "^0.3.2",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-cli": "^0.1.1",
@@ -68,11 +73,11 @@
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
+    "nodemon": "^1.8.1",
     "phantomjs": "^1.9.19",
     "react-addons-test-utils": "^0.14.3",
     "redux-devtools": "^2.1.5",
-    "sinon": "git+https://github.com/sinonjs/sinon.git",
-    "ghooks": "^0.3.2"
+    "sinon": "git+https://github.com/sinonjs/sinon.git"
   },
   "config": {
     "ghooks": {

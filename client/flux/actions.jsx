@@ -8,7 +8,7 @@ export function loadExampleJSON(id) {
       type: LOADING
     });
     setTimeout(() => { // just to see loading text
-      fetch.get(`/react-webpack/client/data/dummy.json?id=${id}`).
+      fetch.get(`/_assets/dummy.json?id=${id}`).
         then((response) => {
           dispatch({
             type: LOADING_FINISHED,
