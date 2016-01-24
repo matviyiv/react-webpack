@@ -1,5 +1,7 @@
 import React from 'react';
 import { Router, Route } from 'react-router';
+import store from 'reduxStore';
+import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import 'css/normalize.css';
 import 'css/global.scss';
@@ -15,8 +17,10 @@ if (!Object.assign) {
 
 export default function () {
   return (
-    <Router history={history}>
-      <Route name="root" component={HelloContainer} path="*" />
-    </Router>
+    <Provider store={store}>
+      <Router history={history}>
+        <Route name="root" component={HelloContainer} path="*" />
+      </Router>
+    </Provider>
   );
 }
