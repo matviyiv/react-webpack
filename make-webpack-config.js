@@ -139,11 +139,13 @@ function stylesheetLoaders(options) {
 function baseLoaders(options) {
   var loadersByExtension = require('./loadersByExtension'),
     base = {
-      'jsx': options.hotComponents ? [
-          'react-hot-loader', 'babel-loader?stage=0'
-        ] : 'babel-loader?stage=0',
+      'jsx': {
+        loader: 'babel-loader',
+        query: {presets: ['es2015', 'stage-0', 'react']}
+      },
       'js': {
-        loader: 'babel-loader?stage=0',
+        loader: 'babel-loader',
+        query: {presets: ['es2015', 'stage-0']},
         include: path.join(__dirname, 'client')
       },
       'json': 'json-loader',

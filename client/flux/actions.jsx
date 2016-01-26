@@ -1,7 +1,9 @@
 import fetch from 'ui/utils/fetch';
 
-const LOADING = 'LOADING';
-const LOADING_FINISHED = 'LOADING_FINISHED';
+const LOADING = 'LOADING',
+  LOADING_FINISHED = 'LOADING_FINISHED',
+  INCREMENT = 'INCREMENT';
+
 export function loadExampleJSON(id) {
   return dispatch => {
     dispatch({
@@ -19,7 +21,6 @@ export function loadExampleJSON(id) {
   };
 }
 
-const INCREMENT = 'INCREMENT';
 export function increment() {
   return { type: INCREMENT };
 }

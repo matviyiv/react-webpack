@@ -30,11 +30,11 @@ export class HelloContainer extends React.Component {
 
   handleExample = () => {
     this.props.actions.increment();
-  }
+  };
 
   loadJSON = () => {
     this.props.actions.loadExampleJSON(111);
-  }
+  };
 }
 
 HelloContainer.propTypes = {

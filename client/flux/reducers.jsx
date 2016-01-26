@@ -21,9 +21,8 @@ export function reducerFirst(state = {example: 1}, action) {
       return { ...st, ...newState };
     },
     default: (st) => { return st; }
-  };
-
-  const modifier = actions[action.type] || actions.default;
+  },
+  modifier = actions[action.type] || actions.default;
 
   return modifier(state, action.data);
 }
