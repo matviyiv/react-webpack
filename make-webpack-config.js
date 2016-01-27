@@ -138,10 +138,29 @@ function stylesheetLoaders(options) {
 
 function baseLoaders(options) {
   var loadersByExtension = require('./loadersByExtension'),
+    babe6HotLoader = {
+      presets: ['es2015', 'stage-0', 'react'],
+      env: {
+        // only enable it when process.env.NODE_ENV is 'development' or undefined
+        development: {
+          plugins: [['react-transform', {
+            transforms: [{
+              transform: 'react-transform-hmr',
+              // if you use React Native, pass 'react-native' instead:
+              imports: ['react'],
+              // this is important for Webpack HMR:
+              locals: ['module']
+            }]
+            // note: you can put more transforms into array
+            // this is just one of them!
+          }]]
+        }
+      }
+    },
     base = {
       'jsx': {
         loader: 'babel-loader',
-        query: {presets: ['es2015', 'stage-0', 'react']}
+        query: options.hotComponents ? babe6HotLoader : {presets: ['es2015', 'stage-0', 'react']}
       },
       'js': {
         loader: 'babel-loader',
@@ -153,8 +172,6 @@ function baseLoaders(options) {
       'txt': 'raw-loader',
       'png|jpg|jpeg|gif|svg': 'url-loader?limit=10000',
       'woff|woff2': 'url-loader?limit=100000',
-      'ttf|eot': 'file-loader',
-      'wav|mp3': 'file-loader',
       'html': 'html-loader'
     };
 
