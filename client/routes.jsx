@@ -7,6 +7,7 @@ import 'css/normalize.css';
 import 'css/global.scss';
 
 import HelloContainer from 'ui/hello/HelloContainer';
+import StartPage from 'ui/slides/StartPage';
 
 let history = createBrowserHistory();
 
@@ -19,7 +20,8 @@ export default function () {
   return (
     <Provider store={store}>
       <Router history={history}>
-        <Route name="root" component={HelloContainer} path="*" />
+        <Route name="start" component={StartPage} path="/"/>
+        <Route name="hello" component={HelloContainer} path="/hello" />
       </Router>
     </Provider>
   );

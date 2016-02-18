@@ -8,7 +8,7 @@ var express = require('express'),
     settings   = require('../settings').appSettings,
   	html = fs.readFileSync(path.join(clientFolder, 'index.html'), 'utf8');
 
-router.get('/', htmlHandler);
+router.get('/*', htmlHandler);
 
 function htmlHandler(req, res) {
   var newHtml = html.
