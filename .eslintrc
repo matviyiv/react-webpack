@@ -13,10 +13,7 @@
   "rules": {
     "strict": 0,
     "eol-last": 0,
-    "space-after-keywords": [
-      2,
-      "always"
-    ],
+    "keyword-spacing": 2,
     "space-before-function-paren": [
         2,
         {"anonymous": "always", "named": "never"}
@@ -24,6 +21,7 @@
     "no-shadow": 2,
     "max-statements": [2, 20],
     "one-var": 2,
+    "semi": 2,
     "semi-spacing": 2,
     "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
     "space-before-blocks": [2, "always"],
@@ -51,7 +49,7 @@
     "dot-notation": 2,
     "no-alert": 2,
     "no-else-return": 2,
-    "no-empty-label": 2,
+    "no-labels": 2,
     "no-eq-null": 2,
     "no-eval": 2,
     "no-implied-eval": 2,

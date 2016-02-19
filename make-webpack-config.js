@@ -86,7 +86,8 @@ module.exports = function (options) {
       }
     },
     eslint: {  
-      configFile: '.eslintrc'
+      configFile: '.eslintrc',
+      fix: true
     }
   };
 };
