@@ -1,18 +1,21 @@
 var express = require('express'),
+    request = require('request'),
     router  = express.Router(),// eslint-disable-line
-    env = process.env.NODE_ENV,
+    env = process.env.NODE_ENV || 'dev',
     fs = require('fs'),
-    path= require('path'),
-    clientFolder = path.join(__dirname, '../../client'),
-    settings   = require('../settings').appSettings,
-    html = fs.readFileSync(path.join(clientFolder, 'index.html'), 'utf8');
+    settings   = require('../settings').appSettings[env];;
 
 router.get('/*', htmlHandler);
 
 function htmlHandler(req, res) {
-  var newHtml = html.
-    replace(/DOMAIN/g, env == 'prod' ? '' : settings.webpackDomain);
-  res.send(newHtml);
+  if (env == 'dev') {
+    return request(settings.indexHTML, function (error, response, body) {
+      res.send(body);
+    });
+  }
+
+  fs.createReadStream(settings.indexHTML, 'utf8').
+    pipe(res);
 }
 
 module.exports = router;

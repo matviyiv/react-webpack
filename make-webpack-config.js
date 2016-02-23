@@ -1,6 +1,7 @@
 var path = require('path'),
   webpack = require('webpack'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin');
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (options) {
   var alias = {};
@@ -15,7 +16,10 @@ module.exports = function (options) {
   ];
   var plugins = [
     new webpack.PrefetchPlugin('react'),
-    new webpack.PrefetchPlugin('react/lib/ReactComponentBrowserEnvironment')
+    new webpack.PrefetchPlugin('react/lib/ReactComponentBrowserEnvironment'),
+    new HtmlWebpackPlugin({
+      template: path.join(root + '/index.html')
+    })
   ];
   if (options.prerender) {
     aliasLoader['react-proxy$'] = 'react-proxy/unavailable';

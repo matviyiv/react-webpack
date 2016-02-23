@@ -1,6 +1,8 @@
 exports.appSettings = {
-  webpackDomain: 'http://localhost:2992',
-  clientDev: {
-  	domain: '//localhost:8080'
+  production: {
+    indexHTML: './build/public/index.html'
+  },
+  dev: {
+    indexHTML: 'http://localhost:2992/_assets/index.html'
   }
 };
