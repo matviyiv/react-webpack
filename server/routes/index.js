@@ -9,9 +9,7 @@ router.get('/*', htmlHandler);
 
 function htmlHandler(req, res) {
   if (env == 'dev') {
-    return request(settings.indexHTML, function (error, response, body) {
-      res.send(body);
-    });
+    return req.pipe(request(settings.indexHTML)).pipe(res);
   }
 
   fs.createReadStream(settings.indexHTML, 'utf8').
