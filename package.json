@@ -5,7 +5,7 @@
   "main": "client/app.js",
   "private": true,
   "scripts": {
-    "test": "karma start karma.config.js",
+    "test": "npm run lint && karma start karma.config.js && mocha ./server/**/*.spec.js",
     "test-watch": "karma start karma.config.js --no-single-run --auto-watch",
     "hot": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
     "build": "webpack --config webpack-production.config.js --progress --profile --colors",
@@ -13,7 +13,7 @@
     "start-dev": "npm run hot & npm run dev-server && fg",
     "start-prod": "NODE_ENV=production node ./server/index.js",
     "start": "npm run build && npm run start-prod",
-    "lint": "eslint -c .eslintrc --fix ./server/**/*.js"
+    "lint": "eslint -c .eslintrc --fix ./server"
   },
   "keywords": [
     "webpack",
@@ -81,12 +81,14 @@
     "karma-phantomjs-shim": "^1.1.2",
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
-    "mocha": "^2.3.4",
+    "mocha": "^2.4.5",
+    "nock": "^7.2.2",
     "nodemon": "^1.8.1",
     "phantomjs": "^1.9.19",
     "react-addons-test-utils": "^0.14.3",
     "redux-devtools": "^2.1.5",
-    "sinon": "git+https://github.com/sinonjs/sinon.git"
+    "sinon": "git+https://github.com/sinonjs/sinon.git",
+    "supertest": "^1.2.0"
   },
   "config": {
     "ghooks": {

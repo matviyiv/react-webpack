@@ -6,5 +6,5 @@ app.set('hostname', 'localhost');
 app.set('port', 8080);
 
 server = app.listen(app.get('port'), app.get('hostname'), function () {
-  console.log('Express server started on port ' + server.address().address + ':' + server.address().port);
+  console.log('Express server started on port ' + server.address().address + ':' + server.address().port);// eslint-disable-line
 });

@@ -5,7 +5,9 @@ var express = require('express'),
     publicFolder = path.join(__dirname, '../client/public'),
     buildFolder = path.join(__dirname, '../build/public'),
     routes = require('./routes'),
-    cookieParser = require('cookie-parser');    
+    cookieParser = require('cookie-parser'),
+    env = process.env.NODE_ENV || 'dev',
+    settings = require('./settings').appSettings[env];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +17,7 @@ app.use(cookieParser());
 app.use('/_assets', express.static(publicFolder));
 app.use('/_assets', express.static(buildFolder));
 
-app.use('/', routes);
+app.use('/', routes(settings));
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
@@ -23,7 +25,7 @@ app.use(function (req, res, next) {
   next(err);
 });
 
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
   res.status(err.status || 500);
   res.send('error'+ err.message);
 });
