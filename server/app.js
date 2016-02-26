@@ -9,6 +9,8 @@ var express = require('express'),
     env = process.env.NODE_ENV || 'dev',
     settings = require('./settings').appSettings[env];
 
+app.set('port', settings.port);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

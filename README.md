@@ -11,6 +11,7 @@ Client side unit test use karma.
   * [Code Examples](#code-examples)
   	* [Actions](#actions)
   	* [Reducers](#reducers)
+  * [Docker](#docker)
   * [Thanks](#thanks)
 
 *****
@@ -96,6 +97,25 @@ export function reducerExample(state = {example: 1}, action) {
   return modifier(state, action.data);
 }
 ```
+
+## Docker
+### Create docker container
+```
+npm run dockerize
+```
+### Start docker container
+```
+docker run -p 4501:8080 -d react-webpack/website
+```
+Now you can open browser on url:
+```
+echo http://$(docker-machine ip default):4501
+```
+### SSH container
+```
+docker exec -it CONTAINER_ID /bin/sh
+```
+
 
 ## Thanks
 Cool webpack config I took from https://github.com/webpack/react-starter
