@@ -105,7 +105,7 @@ npm run dockerize
 ```
 ### Start docker container
 ```
-docker run -p 4501:8080 -d react-webpack/website
+docker run -p 4501:8080 -d --name web react-webpack/website
 ```
 Now you can open browser on url:
 ```
@@ -113,7 +113,7 @@ echo http://$(docker-machine ip default):4501
 ```
 ### SSH container
 ```
-docker exec -it CONTAINER_ID /bin/sh
+docker exec -it web /bin/sh
 ```
 
 
