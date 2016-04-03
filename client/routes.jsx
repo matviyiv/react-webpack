@@ -3,13 +3,14 @@ import { Router, Route } from 'react-router';
 import store from 'reduxStore';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { isBrowser } from 'ui/utils';
 import 'css/normalize.css';
 import 'css/global.scss';
 
 import HelloContainer from 'ui/hello/HelloContainer';
 import StartPage from 'ui/slides/StartPage';
 
-let history = createBrowserHistory();
+let history = isBrowser() ? createBrowserHistory() : {};
 
 // polyfill
 if (!Object.assign) {

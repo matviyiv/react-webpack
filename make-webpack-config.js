@@ -211,6 +211,6 @@ function output(options) {
 
 function entry(options) {
   return {
-    main: './client/app'
+    main: options.prerender ? './client/ServerRenderer' : './client/app'
   };
 }
