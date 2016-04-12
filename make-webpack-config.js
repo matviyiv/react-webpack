@@ -213,4 +213,5 @@ function entry(options) {
   return {
     main: options.prerender ? './client/ServerRenderer' : './client/app'
   };
+
 }

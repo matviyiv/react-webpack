@@ -1,2 +1,2 @@
-var context = require.context('./client', true, /-spec\.jsx$/); //make sure you have your directory and regex test set correctly!
+var context = require.context('./client', true, /-spec\.jsx$/);
 context.keys().forEach(context);
