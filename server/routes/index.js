@@ -11,19 +11,17 @@ function initRoutes(settings) {
     renderer = new ServerRenderer(settings);
 
   router.get('/*', function (req, res) {
-    if (settings.serverSideRender) {
-      console.log(req.url);// eslint-disable-line
-      return renderer.render(req.url).then(function (html) {
-        res.set('Content-Type', 'text/html; charset=utf8');
-        if (_.include(settings.indexHTML, 'http')) {
-          return req.pipe(request(settings.indexHTML)).pipe(res);
-        }
-        res.end(indexHTML.replace('CONTENT', html));
-      }).
-      catch(function (error) {
-        res.status(error.status).send(error.message);
-      });
-    }
+    console.log(req.url);// eslint-disable-line
+    return renderer.render(req.url).then(function (html) {
+      res.set('Content-Type', 'text/html; charset=utf8');
+      if (_.include(settings.indexHTML, 'http')) {
+        return req.pipe(request(settings.indexHTML)).pipe(res);
+      }
+      res.end(indexHTML.replace('CONTENT', html));
+    }).
+    catch(function (error) {
+      res.status(error.status).send(error.message);
+    });
   });
 
   return router;
