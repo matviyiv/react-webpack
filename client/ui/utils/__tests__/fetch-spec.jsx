@@ -1,3 +1,5 @@
+import fetch_polyfill from 'fetch-polyfill';// eslint-disable-line
+import promise_polyfill from 'es6-promise';// eslint-disable-line
 import expect from 'expect';
 import sinon from 'sinon';
 import bluebird from 'bluebird';

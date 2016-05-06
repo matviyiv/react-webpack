@@ -28,13 +28,13 @@ describe('routes', function () {
         .end(done);
     });
 
-    it('should return 200 and html from file', function (done) {
+    it('should return 200 and html with main.js', function (done) {
       settings.indexHTML = './server/routes/__tests__/index.spec.js';
       request(app)
         .get('/')
         .expect(200)
         .end(function (err, res) {
-          expect(res.text).toContain('routes');
+          expect(res.text).toContain('/_assets/main.js');
           done(err);
         });
     });
