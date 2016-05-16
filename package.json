@@ -32,6 +32,13 @@
     "estraverse-fb": "^1.3.1",
     "express": "^4.13.3",
     "lodash": "^3.9.3",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-proxy-loader": "^0.3.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^1.0.3",
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.2",
     "request": "^2.69.0"
   },
   "devDependencies": {
@@ -59,15 +66,7 @@
     "less-loader": "^2.0.0",
     "node-sass": "3.3.3",
     "null-loader": "^0.1.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-lazy-load": "^1.0.4",
-    "react-proxy-loader": "^0.3.1",
-    "react-redux": "^4.0.0",
-    "react-router": "^1.0.3",
     "react-transform-hmr": "^1.0.1",
-    "redux": "^3.0.4",
-    "redux-thunk": "^1.0.2",
     "sass-loader": "0.5.0",
     "style-loader": "^0.12.0",
     "superagent": "^1.1.0",
@@ -89,10 +88,10 @@
     "nock": "^7.2.2",
     "nodemon": "^1.8.1",
     "phantomjs": "^1.9.19",
-    "react-addons-test-utils": "^0.14.3",
     "redux-devtools": "^2.1.5",
     "sinon": "git+https://github.com/sinonjs/sinon.git",
-    "supertest": "^1.2.0"
+    "supertest": "^1.2.0",
+    "react-addons-test-utils": "^15.0.2"
   },
   "config": {
     "ghooks": {
